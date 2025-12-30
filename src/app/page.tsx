@@ -1,9 +1,10 @@
-import Image from "next/image";
+import SolfitHeader from "./components/Header";
 
 export default function Home() {
   return (
     <div className="">
       
     </div>
+    <SolfitHeader />
   );
 }
