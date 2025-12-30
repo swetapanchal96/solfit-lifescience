@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiMail, FiChevronDown, FiChevronRight, FiMenu, FiX } from "react-icons/fi";
 import { PiPhoneCall } from "react-icons/pi";
-import logo from "../asserts/headerlogo.png";
+import logo from "../assets/headerlogo.png";
 
 type MenuItem = {
     label: string;
