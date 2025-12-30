@@ -68,37 +68,84 @@ export default function SolfitHeader() {
 
     const activeChildren = activeIdx != null ? PRODUCTS_MENU[activeIdx]?.children : undefined;
 
+    // language dropdown code.
+    const [langOpen, setLangOpen] = useState(false);
+    const [selectedLang, setSelectedLang] = useState({
+        label: "English",
+        flag: "🇺🇸",
+    });
+    const langRef = useRef<HTMLDivElement>(null);
+
+    const LANGUAGES = [
+        { label: "English", flag: "🇺🇸" },
+        { label: "Japanese", flag: "🇯🇵" },
+        { label: "French", flag: "🇫🇷" },
+        { label: "Spanish", flag: "🇪🇸" },
+        { label: "German", flag: "🇩🇪" },
+        { label: "Russian", flag: "🇷🇺" },
+        { label: "Korean", flag: "🇰🇷" },
+    ];
+
+
+
     return (
         <header className="w-full">
             {/* Top bar */}
-            <div className="w-full border-b border-slate-200 bg-[#eef6fd]">
-                <div className="mx-auto flex max-w-[1320] items-center justify-between px-4 py-2">
+            <div className="w-full h-40 md:h-16 border-b border-black bg-[#eef6fd]">
+                <div className="mx-auto flex flex-col-reverse md:flex-row max-w-[1320] items-center justify-between px-9 py-2">
                     {/* left */}
                     <div className="flex items-center gap-3">
-                        <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-slate-800 shadow-sm">
-                            <FiMail />
+                        <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-slate-800 shadow-sm">
+                            <FiMail className="h-6 w-6 text-[#031B4E]" />
                         </span>
-                        <a href="mailto:info@solfitlifesciences.com" className="text-sm font-semibold text-slate-900 hover:underline">
+                        <a href="mailto:info@solfitlifesciences.com" className="text-[16px] font-semibold  text-[#031B4E] hover:underline">
                             info@solfitlifesciences.com
                         </a>
                     </div>
 
                     {/* right */}
-                    <div className="flex items-center gap-3">
-                        <button
-                            type="button"
-                            className="flex items-center gap-2 rounded-md bg-[#8BC34A] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:brightness-95"
-                        >
-                            <span className="text-base leading-none">🇺🇸</span>
-                            English
-                            <FiChevronDown className="opacity-90" />
-                        </button>
+                    <div className="flex flex-col md:flex-row items-center gap-3">
+                        <div ref={langRef} className="relative">
+                            <button
+                                type="button"
+                                onClick={() => setLangOpen((v) => !v)}
+                                className="flex items-center w-40 h-9 gap-2 rounded-md bg-[#92BC2A] px-4 text-sm font-semibold text-white shadow-sm cursor-pointer"
+                            >
+                                <span className="text-base leading-none">{selectedLang.flag}</span>
+                                <span className="flex-1 text-left">{selectedLang.label}</span>
+                                <FiChevronDown
+                                    className={`opacity-90 transition-transform ${langOpen ? "rotate-180" : ""}`}
+                                />
+                            </button>
+
+                            {/* Dropdown */}
+                            {langOpen && (
+                                <div className="absolute -right-6 z-50 mt-2 w-44 rounded-md border border-gray-200 bg-white shadow-lg">
+                                    <ul className="py-1">
+                                        {LANGUAGES.map((lang) => (
+                                            <li key={lang.label}>
+                                                <button
+                                                    onClick={() => {
+                                                        setSelectedLang(lang);
+                                                        setLangOpen(false);
+                                                    }}
+                                                    className="flex w-full items-center gap-3 px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                                                >
+                                                    <span className="text-base">{lang.flag}</span>
+                                                    {lang.label}
+                                                </button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
 
                         <div className="flex items-center gap-3">
-                            <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-slate-800 shadow-sm">
-                                <PiPhoneCall />
+                            <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-slate-800 shadow-sm">
+                                <PiPhoneCall className="h-6 w-6 text-[#031B4E]" />
                             </span>
-                            <a href="tel:+919979797828" className="text-sm font-semibold text-slate-900 hover:underline">
+                            <a href="tel:+919979797828" className="text-[16px] font-semibold text-[#031B4E] hover:underline">
                                 +91 99797 97828
                             </a>
                         </div>
@@ -108,10 +155,10 @@ export default function SolfitHeader() {
 
             {/* Main header */}
             <div className="w-full ">
-                <div className="mx-auto flex max-w-[1320] items-center justify-between px-4 py-4">
+                <div className="mx-auto flex max-w-[1320] h-25 items-center justify-between px-8 py-4">
                     {/* logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <Image src={logo} alt="Solfit Lifesciences" width={150} height={48} className="h-12 w-auto" priority />
+                        <Image src={logo} alt="Solfit Lifesciences" width={185} height={55} className="h-12 w-auto" priority />
                     </Link>
 
                     {/* desktop nav */}
@@ -239,9 +286,9 @@ export default function SolfitHeader() {
                                                                         }}
                                                                         whileHover="hover"
                                                                     >
-                                                           
+
                                                                         <Link href={c.href} className="flex items-center gap-3">
-                                                                         
+
                                                                             <motion.span
                                                                                 className="h-[2] w-0 bg-[#0b2b5e]/60"
                                                                                 variants={{ hover: { width: "15px" } }}
@@ -278,7 +325,7 @@ export default function SolfitHeader() {
                     <div className="hidden lg:block">
                         <Link
                             href="/contact"
-                            className="rounded-full bg-[#8BC34A] px-7 py-3 text-sm font-extrabold text-white shadow-sm hover:brightness-95"
+                            className="rounded-full bg-[#92BC2A] hover:bg-[#031b4e] px-9 py-5 text-sm font-medium text-white shadow-sm "
                         >
                             INQUIRE NOW
                         </Link>
