@@ -1,89 +1,182 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
 
-const HERO_IMAGES = [
-  "/hero/hero-1.png",
-  "/hero/hero-2.png",
-  "/hero/hero-3.png",
-];
+import "swiper/css";
+import "swiper/css/pagination";
+
+import slider1 from "@/app/assets/slider1.webp";
+import slider2 from "@/app/assets/slider2.webp";
+import slider3 from "@/app/assets/slider3.webp";
 
 export default function Hero() {
-  const [active, setActive] = useState(0);
-
-  // Auto slide
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative mx-auto mt-6 max-w-350 overflow-hidden rounded-[28px] bg-[#f2f6fb]">
-      <div className="relative grid min-h-135 grid-cols-1 items-center px-12 py-16 lg:grid-cols-2">
-        {/* LEFT CONTENT */}
-        <div className="relative z-10 max-w-xl">
-          <p className="mb-4 text-[36px] font-light text-[#0b2b5e]">
-            Enhancing Lives with
-          </p>
+    <section className="px-4 md:px-5 lg:px-5">
+      <div className="relative h-[85vh] overflow-hidden rounded-4xl bg-white">
 
-          <h1 className="mb-6 text-[46px] font-extrabold leading-tight text-[#0b2b5e]">
-            The Power of Science
-          </h1>
+        <Swiper
+          modules={[Pagination]}
+          pagination={{
+             clickable: true,
+             el: ".hero-pagination",}}
+          loop
+          speed={1400} // 👈 slow slide transition (VERY IMPORTANT)
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          className="w-full h-full"
+        >
 
-          <p className="mb-8 max-w-md text-[16px] leading-6.5 text-[#0b2b5e]">
-            Transforming health and wellness through sustainable collagen
-            solutions.
-          </p>
+          {/* ================= SLIDE 1 ================= */}
+          <SwiperSlide>
+            <Image src={slider3} alt="Slide 1" fill className="object-cover" priority />
 
-          <button className="rounded-full bg-[#8BC34A] px-8 py-3 text-sm font-bold text-white hover:brightness-95">
-            CONTACT US
-          </button>
-        </div>
+            <div className="relative z-10 h-full flex py-20">
+              <div className="max-w-7xl px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-        {/* RIGHT IMAGE AREA */}
-        <div className="relative h-full w-full">
-          {/* GREEN SHAPE */}
-          <div className="absolute -right-22.5 top-1/2 h-110 w-110 -translate-y-1/2 rounded-full bg-[#0a9f3d]" />
+                {/* LEFT CONTENT */}
+                <motion.div
+                  key={`slide-1-${activeIndex}`}
+                  initial={{
+                    opacity: 0,
+                    x: 180,       // 👈 strong visible movement
+                    scale: 0.92,  // 👈 depth effect
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                    scale: 1,
+                  }}
+                  transition={{
+                    duration: 1.6,
+                    delay: 0.4,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                >
+                  <h4 className="text-[#031b4e] font-normal mb-2 leading-[1.15] text-[50px]">
+                    Global Reach <br />
+                    <strong>Trusted Quality</strong>
+                  </h4>
 
-          {/* SLIDER IMAGES */}
-          <div className="relative z-10 h-full w-full">
-            {HERO_IMAGES.map((src, idx) => (
-              <div
-                key={src}
-                className={`absolute inset-0 transition-opacity duration-700 ${
-                  active === idx ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <Image
-                  src={src}
-                  alt="Hero image"
-                  fill
-                  priority={idx === 0}
-                  className="object-contain object-right"
-                />
+                  <p className="mt-5 mb-6 pt-5 border-t border-[#031b4e1a] text-[#031b4e] max-w-md">
+                    Certified collagen products for health, beauty, and beyond.
+                  </p>
+
+                  <motion.button
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.9,
+                      delay: 1.2,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="px-8 py-4 rounded-full bg-[#92BC2A] hover:bg-[#031b4e] text-white"
+                  >
+                    CONTACT US
+                  </motion.button>
+                </motion.div>
+
+                <div className="hidden lg:block" />
               </div>
-            ))}
-          </div>
+            </div>
+          </SwiperSlide>
 
-          {/* RIGHT DOTS (EXACT STYLE) */}
-          <div className="absolute right-6 top-1/2 z-20 flex -translate-y-1/2 flex-col gap-3">
-            {HERO_IMAGES.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActive(idx)}
-                className={`h-3 w-3 rounded-full border-2 transition ${
-                  active === idx
-                    ? "border-[#0b2b5e] bg-white"
-                    : "border-[#0b2b5e] bg-transparent"
-                }`}
-                aria-label={`Slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-        </div>
+          {/* ================= SLIDE 2 ================= */}
+          <SwiperSlide>
+            <Image src={slider2} alt="Slide 2" fill className="object-cover" />
+
+            <div className="relative z-10 h-full flex py-20">
+              <div className="max-w-7xl px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                <motion.div
+                  key={`slide-2-${activeIndex}`}
+                  initial={{ opacity: 0, x: 180, scale: 0.92 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{
+                    duration: 1.6,
+                    delay: 0.4,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                >
+                  <h4 className="text-[#031b4e] font-normal mb-2 leading-[1.15] text-[50px]">
+                    Precision Driven <br />
+                    <strong>Scientific Formulations</strong>
+                  </h4>
+
+                  <p className="mt-5 mb-6 pt-5 border-t border-[#031b4e1a] text-[#031b4e] max-w-md">
+                    Sustainably sourced for superior purity and bioavailability
+                  </p>
+
+                  <motion.button
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.9,
+                      delay: 1.2,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="px-8 py-4 rounded-full bg-[#92BC2A] hover:bg-[#031b4e] text-white"
+                  >
+                    CONTACT US
+                  </motion.button>
+                </motion.div>
+
+                <div className="hidden lg:block" />
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* ================= SLIDE 3 ================= */}
+          <SwiperSlide>
+            <Image src={slider1} alt="Slide 3" fill className="object-cover" />
+
+            <div className="relative z-10 h-full flex py-20">
+              <div className="max-w-7xl px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                <motion.div
+                  key={`slide-3-${activeIndex}`}
+                  initial={{ opacity: 0, x: 180, scale: 0.92 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{
+                    duration: 1.6,
+                    delay: 0.4,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                >
+                  <h4 className="text-[#031b4e] font-normal mb-2 leading-[1.15] text-[50px]">
+                    Enhancing Lives with <br />
+                    <strong>The Power of Science</strong>
+                  </h4>
+
+                  <p className="mt-5 mb-6 pt-5 border-t border-[#031b4e1a] text-[#031b4e] max-w-md">
+                    Sustainably sourced for superior purity and bioavailability
+                  </p>
+
+                  <motion.button
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.9,
+                      delay: 1.2,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="px-8 py-4 rounded-full bg-[#92BC2A] hover:bg-[#031b4e] text-white"
+                  >
+                    CONTACT US
+                  </motion.button>
+                </motion.div>
+
+                <div className="hidden lg:block" />
+              </div>
+            </div>
+          </SwiperSlide>
+
+        </Swiper>
+        <div className="hero-pagination absolute right-9 top-2/3 -translate-y-1/2 z-20 flex flex-col gap-3" />
       </div>
     </section>
   );
