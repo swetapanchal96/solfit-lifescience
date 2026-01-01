@@ -71,9 +71,6 @@ const HomeAbout: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-
-
-
                         {/* BUTTON */}
                         <div className="mt-8">
                             <button

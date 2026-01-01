@@ -163,7 +163,7 @@ export default function SolfitHeader() {
 
                     {/* desktop nav */}
                     <nav className="hidden items-center gap-8 lg:flex">
-                        <NavLink href="/about">ABOUT US</NavLink>
+                        <NavLink href="/about-us">ABOUT US</NavLink>
                         <NavLink href="/infrastructure">INFRASTRUCTURE</NavLink>
 
                         {/* PRODUCTS dropdown (desktop) */}
