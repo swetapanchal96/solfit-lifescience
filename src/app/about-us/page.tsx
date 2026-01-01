@@ -4,6 +4,9 @@ import Image from "next/image";
 import aboutHero from "@/app/assets/about.webp";
 import aboutSectionImg from "@/app/assets/about-us-solfit.webp";
 import Breadcrumb from "../components/Breadcrumb";
+import visionImg from "@/app/assets/icons8-vision-70.webp";
+import missionImg from "@/app/assets/icons8-mission-70.webp";
+import valuesImg from "@/app/assets/icons8-diamond-70.webp";
 
 export const metadata: Metadata = {
     title: "About Us | Solift",
@@ -64,6 +67,7 @@ export default function AboutUsPage() {
                 </div>
             </section>
             {/* rest of About page content here */}
+            
         </main>
     );
 }
