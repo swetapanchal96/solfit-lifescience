@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Sora } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 import SolfitHeader from "./components/Header";
+import ScrollToTopProgress from "./components/ScrollToTopProgress";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
       >
         <SolfitHeader />
         {children}
+        <ScrollToTopProgress />
         <Footer />
       </body>
     </html>

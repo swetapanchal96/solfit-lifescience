@@ -318,13 +318,13 @@ export default function SolfitHeader() {
                         </div>
 
                         <NavLink href="/career">CAREER</NavLink>
-                        <NavLink href="/contact">CONTACT US</NavLink>
+                        <NavLink href="/contact-us">CONTACT US</NavLink>
                     </nav>
 
                     {/* CTA */}
                     <div className="hidden lg:block">
                         <Link
-                            href="/contact"
+                            href="/inquiry"
                             className="rounded-full bg-[#92BC2A] hover:bg-[#031b4e] px-9 py-5 text-sm font-medium text-white shadow-sm "
                         >
                             INQUIRE NOW

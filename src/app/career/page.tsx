@@ -18,7 +18,7 @@ export default function CareerPage() {
 
             {/* TOP CONTENT (same like screenshot) */}
             <section className="py-10 md:py-16">
-                <div className="mx-auto max-w-8xl px-4 md:px-0">
+                <div className="mx-auto max-w-7xl px-4 md:px-6">
                     <div className="text-center">
                         <Reveal delay={60}>
                             <span className="inline-flex rounded-full bg-[#8cc63f] px-6 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white">
@@ -45,7 +45,7 @@ export default function CareerPage() {
 
                     {/* FORM CARD (same like screenshot) */}
                     <div className="mt-10 md:mt-14">
-                        <div className="mx-auto max-w-5xl rounded-[36px] bg-white p-6 shadow-[0_14px_35px_rgba(3,27,78,0.08)] md:p-10">
+                        <div className="mx-auto max-w-6xl rounded-[36px] bg-white p-6 shadow-[0_14px_35px_rgba(3,27,78,0.08)] md:p-10">
                             <Reveal delay={80}>
                                 <h2 className="text-center text-3xl font-semibold text-[#8cc63f] md:text-4xl">
                                     Reach out to us
@@ -59,7 +59,7 @@ export default function CareerPage() {
                                         <input
                                             type="text"
                                             placeholder="Your Name *"
-                                            className="placeholder:font-semibold h-14 w-full rounded-full bg-[#eef6ff] px-7 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-[#8cc63f]/40"
+                                            className="h-14 w-full rounded-full bg-[#eef6ff] px-7 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-[#8cc63f]/40"
                                         />
                                     </Reveal>
 
@@ -67,7 +67,7 @@ export default function CareerPage() {
                                         <input
                                             type="text"
                                             placeholder="Qualification *"
-                                            className="placeholder:font-semibold  h-14 w-full rounded-full bg-[#eef6ff] px-7 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-[#8cc63f]/40"
+                                            className="h-14 w-full rounded-full bg-[#eef6ff] px-7 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-[#8cc63f]/40"
                                         />
                                     </Reveal>
 
@@ -75,7 +75,7 @@ export default function CareerPage() {
                                         <input
                                             type="email"
                                             placeholder="Your Email *"
-                                            className="placeholder:font-semibold  h-14 w-full rounded-full bg-[#eef6ff] px-7 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-[#8cc63f]/40"
+                                            className="h-14 w-full rounded-full bg-[#eef6ff] px-7 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-[#8cc63f]/40"
                                         />
                                     </Reveal>
 
@@ -83,7 +83,7 @@ export default function CareerPage() {
                                         <input
                                             type="tel"
                                             placeholder="Your Phone *"
-                                            className="placeholder:font-semibold  h-14 w-full rounded-full bg-[#eef6ff] px-7 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-[#8cc63f]/40"
+                                            className="h-14 w-full rounded-full bg-[#eef6ff] px-7 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none ring-0 focus:outline-none focus:ring-2 focus:ring-[#8cc63f]/40"
                                         />
                                     </Reveal>
                                 </div>
@@ -92,14 +92,14 @@ export default function CareerPage() {
                                 <Reveal delay={200}>
                                     <textarea
                                         placeholder="message...."
-                                        className="placeholder:font-semibold  mt-6 h-44 w-full resize-none rounded-[28px] bg-[#eef6ff] px-7 py-5 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none focus:ring-2 focus:ring-[#8cc63f]/40 md:mt-7"
+                                        className="mt-6 h-44 w-full resize-none rounded-[28px] bg-[#eef6ff] px-7 py-5 text-[15px] text-[#031B4E] placeholder:text-[#6b7fa3] outline-none focus:ring-2 focus:ring-[#8cc63f]/40 md:mt-7"
                                     />
                                 </Reveal>
 
                                 {/* Recaptcha placeholder (same position like screenshot) */}
                                 <Reveal delay={220}>
                                     <div className="mt-7 flex justify-center">
-                                        <div className="flex h-[78px] w-[304px] items-center justify-center rounded-md border border-[#d9d9d9] bg-white text-sm text-[#031B4E]">
+                                        <div className="flex h-19.5 w-76 items-center justify-center rounded-md border border-[#d9d9d9] bg-white text-sm text-[#031B4E]">
                                             reCAPTCHA here
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ export default function CareerPage() {
                                 <Reveal delay={240}>
                                     <button
                                         type="button"
-                                        className="mt-7 w-full rounded-full bg-[#8cc63f] py-5 text-sm font-semibold uppercase tracking-widest text-white shadow-[0_14px_30px_rgba(140,198,63,0.25)] hover:brightness-95"
+                                        className="mt-7 w-full rounded-full bg-[#8cc63f]  hover:bg-[#010d27] cursor-pointer py-5 text-sm font-semibold uppercase tracking-widest text-white shadow-[0_14px_30px_rgba(140,198,63,0.25)] hover:brightness-95"
                                     >
                                         Submit Now
                                     </button>
