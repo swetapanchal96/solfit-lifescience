@@ -4,6 +4,19 @@ import Image from "next/image";
 import heroAbout from "@/app/assets/home-about.webp";
 
 const HomeAbout: React.FC = () => {
+    function CheckIcon() {
+    return (
+        <svg viewBox="0 0 24 24" className="mt-1 h-5 w-5 flex-none" fill="none">
+            <path
+                d="M20 6L9 17l-5-5"
+                stroke="#0B63CE"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
     return (
         <section className="w-full py-12 md:py-30 overflow-x-hidden">
             {/* FULL WIDTH CONTAINER – NO MARGINS */}
@@ -61,7 +74,7 @@ const HomeAbout: React.FC = () => {
                                 <div key={i} className="flex items-center gap-4">
                                     {/* Blue check icon */}
                                     <span className="mt-1 items-center text-[#031B4E] text-[16px] ">
-                                        ✓
+                                        <CheckIcon />
                                     </span>
 
                                     {/* Text */}

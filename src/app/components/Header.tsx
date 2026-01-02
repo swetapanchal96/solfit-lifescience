@@ -16,7 +16,7 @@ type MenuItem = {
 
 const PRODUCTS_MENU: MenuItem[] = [
     { label: "FISH COLLAGEN PEPTIDE", href: "/products/fish-collagen-peptide" },
-    { label: "MARINE OLIGOPEPTIDE", href: "/products/marine-oligopeptide" },
+    { label: "MARINE OLIGOPEPTIDE", href: "/product" },
     {
         label: "UNDENATURED TYPE II COLLAGEN (CHICKEN STERNUM)",
         href: "/products/undenatured-type-ii",
