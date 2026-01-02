@@ -42,7 +42,7 @@ export default function InquiryPage() {
 
                     {/* FORM CARD */}
                     <div className="mt-10 md:mt-14">
-                        <div className="mx-auto max-w-5xl shadow-2xl rounded-[36px] bg-white p-6 shadow-[0_14px_35px_rgba(3,27,78,0.08)] md:p-10">
+                        <div className="mx-auto max-w-5xl shadow-2xl rounded-[36px] bg-white p-6  md:p-10">
                             <Reveal delay={80}>
                                 <h2 className=" text-center text-2xl  text-[#8cc63f] md:text-4xl">
                                     Tell Us Your Requirement &amp; We Will Connect with You
@@ -108,7 +108,7 @@ export default function InquiryPage() {
 
                                 <Reveal delay={220}>
                                     <div className="mt-7 flex justify-center">
-                                        <div className="flex h-[78px] w-[304px] items-center justify-center rounded-md border border-[#d9d9d9] bg-white text-sm text-[#031B4E]">
+                                        <div className="flex h-19.7 w-76 items-center justify-center rounded-md border border-[#d9d9d9] bg-white text-sm text-[#031B4E]">
                                             reCAPTCHA here
                                         </div>
                                     </div>

@@ -36,7 +36,7 @@ export default function ScrollToTopProgress() {
     return (
         <div
             className={[
-                "fixed right-6 bottom-6 z-[9999]",
+                "fixed right-6 bottom-6 z-9999",
                 "transition-all duration-300",
                 visible
                     ? "opacity-100 translate-y-0"
@@ -50,7 +50,7 @@ export default function ScrollToTopProgress() {
                 className="relative h-12 w-12 rounded-full shadow-[0_12px_26px_rgba(3,27,78,0.18)]"
             >
                 {/* ✅ Inner green circle (so ring is NOT under it) */}
-                <span className="absolute inset-[3px] rounded-full bg-[#8cc63f]" />
+                <span className="absolute inset-0.75 rounded-full bg-[#8cc63f]" />
 
                 {/* ✅ Ring exactly on border (same size as button) */}
                 <svg

@@ -37,7 +37,7 @@ function ContactCard({
             ].join(" ")}
         >
             {/* Internal layout fixed so all cards same height */}
-            <div className="flex min-h-[240px] flex-col">
+            <div className="flex min-h-60 flex-col">
                 {/* Icon */}
                 <div className="flex items-center gap-3">
                     <div className="text-[#8cc63f] opacity-90">{icon}</div>
@@ -45,9 +45,9 @@ function ContactCard({
 
                 {/* Line + dot (hover fill left->right) */}
                 <div className="mt-4">
-                    <div className="relative h-[2px] w-full bg-[#dfe8d0]">
+                    <div className="relative h-0.5 w-full bg-[#dfe8d0]">
                         <div className="absolute left-0 top-0 h-full w-0 bg-[#8cc63f] transition-all duration-700 group-hover:w-full" />
-                        <div className="absolute right-0 -top-[5px] h-3 w-3 rounded-full bg-[#8cc63f]" />
+                        <div className="absolute right-0 -top-1.75 h-3 w-3 rounded-full bg-[#8cc63f]" />
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     {/* Map */}
                     <Reveal delay={240}>
                         <div className="mt-10 overflow-hidden rounded-[18px] border border-[#dfe7f3] bg-white">
-                            <div className="relative h-[600px] w-full">
+                            <div className="relative h-150 w-full">
                                 <iframe
                                     src={MAP_SRC}
                                     width="100%"

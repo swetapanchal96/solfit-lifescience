@@ -83,7 +83,7 @@ function InfraSection({
             </div>
 
             {/* IMAGE (fixed width like screenshot) */}
-            <div className="w-full md:w-[520px] lg:w-[560px] md:shrink-0">
+            <div className="w-full md:w-130 lg:w-140 md:shrink-0">
 
                 <div
                     className={[
@@ -91,7 +91,7 @@ function InfraSection({
                         imageCard ? "bg-[#ececec] " : "",
                     ].join(" ")}
                 >
-                    <div className="relative h-[331px] w-full">
+                    <div className="relative h-82.75 w-full">
                         <Image
                             src={image}
                             alt={imageAlt}
