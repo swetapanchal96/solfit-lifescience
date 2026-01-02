@@ -27,13 +27,13 @@ export default function CareerPage() {
                         </Reveal>
 
                         <Reveal delay={120}>
-                            <h1 className="mt-6 text-3xl font-semibold leading-tight text-[#031B4E] md:text-6xl">
+                            <h1 className="mt-6 text-3xl leading-tight text-[#031B4E] md:text-5xl">
                                 Share Your Interests &amp; Stay Connected
                             </h1>
                         </Reveal>
 
                         <Reveal delay={180}>
-                            <p className="mx-auto mt-5 max-w-6xl text-[15px] leading-7 text-[#031B4E] md:text-[16px]">
+                            <p className="mx-auto mt-5 text-start text-[15px] leading-7 text-[#031B4E] md:text-[16px]">
                                 At Solfit, you will find opportunities to grow, innovate, and make an impact in the
                                 world of health and wellness. Whether you are an experienced professional or just
                                 starting your journey, we value creativity, collaboration, and passion. Be part of a

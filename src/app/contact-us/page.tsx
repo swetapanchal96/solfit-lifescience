@@ -109,8 +109,8 @@ export default function ContactPage() {
 
                     {/* Map */}
                     <Reveal delay={240}>
-                        <div className="mt-10 overflow-hidden rounded-[18px] border border-[#dfe7f3] bg-white">
-                            <div className="relative h-150 w-full">
+                        <div className="mt-10 overflow-hidden  border border-[#dfe7f3] bg-white">
+                            <div className="relative h-183 w-full">
                                 <iframe
                                     src={MAP_SRC}
                                     width="100%"
