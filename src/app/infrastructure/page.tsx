@@ -146,7 +146,7 @@ export default function Page() {
             />
 
             <section className="py-10 md:py-16">
-                <div className="mx-auto max-w-7xl px-4 md:px-0">
+                <div className="mx-auto max-w-7xl px-4 md:px-6">
                     <Reveal delay={0}>
                         <p className="text-[15px] leading-7 text-[#031B4E] md:text-[16px]">
                             Located in Gujarat, India, our advanced manufacturing facility is designed
